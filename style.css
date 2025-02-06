@@ -1,0 +1,276 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  transition: background-color 0.5s ease;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.color-box {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#playerInput {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+#playerInput input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  margin-right: 10px;
+  width: calc(100% - 120px);
+  margin-bottom: 10px;
+}
+
+#playerInput button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+#playerInput button:hover {
+  background: #218838;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.color-button {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.correct::after {
+  content: "✔";
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wrong::after {
+  content: "✘";
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#gameContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 600px;
+}
+
+#timer {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d9534f;
+}
+
+#message {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* High Score Styling */
+#highScoresContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px;
+}
+
+#highScoresTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+#highScores {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+#highScores li {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+  border: none;
+  margin: 10px 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#gameContainer button {
+  background: #007bff;
+  color: white;
+}
+
+#gameContainer button:hover {
+  background: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .color-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .color-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  #gameContainer {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #playerInput {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #playerInput input {
+    width: calc(100% - 20px);
+    margin-right: 0;
+  }
+
+  #playerInput button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .color-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .color-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  #gameContainer {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #playerInput {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #playerInput input {
+    width: calc(100% - 20px);
+    margin-right: 0;
+  }
+
+  #playerInput button {
+    width: 100%;
+  }
+}
