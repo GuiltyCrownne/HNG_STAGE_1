@@ -14,12 +14,12 @@
         <button onclick="savePlayerName()">Start Game</button>
     </div>
     <div id="gameContainer" class="hidden">
-        <p id="message">Guess the correct color!</p>
+        <p id="message" data-testid="gameInstructions">Guess the correct color!</p>
         <p id="timer">Time Left: <span id="time">30</span>s</p>
-        <div id="colorBox" class="color-box"></div>
+        <div id="colorBox" class="color-box" data-testid="colorBox"></div>
         <div class="buttons-container" id="colorButtons"></div>
-        <p>Score: <span id="score">0</span></p>
-        <button onclick="startNewGame()">New Game</button>
+        <p>Score: <span id="score" data-testid="score">0</span></p>
+        <button onclick="startNewGame()" data-testid="newGameButton">New Game</button>
         <button onclick="showHighScores()">Show High Scores</button>
         <ul id="highScores"></ul>
     </div>
