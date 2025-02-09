@@ -33,10 +33,12 @@ function handleGuess(color, button) {
     
     if (color === targetColor) {
         document.getElementById("message").textContent = "Correct! 🎉";
+        document.getElementById("message").setAttribute("data-testid", "gameStatus");
         button.classList.add("correct");
         score++;
     } else {
         document.getElementById("message").textContent = "Wrong! Try again.";
+        document.getElementById("message").setAttribute("data-testid", "gameStatus");
         button.classList.add("wrong");
         score = Math.max(0, score - 1);
     }
@@ -56,6 +58,7 @@ function startRound() {
         const button = document.createElement("button");
         button.classList.add("color-button");
         button.style.backgroundColor = color;
+        button.setAttribute("data-testid", "colorOption");
         button.onclick = () => handleGuess(color, button);
         buttonContainer.appendChild(button);
     });
